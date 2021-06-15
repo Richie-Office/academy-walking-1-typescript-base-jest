@@ -10,7 +10,7 @@ describe('Addition', () => {
         expect(Add(input)).toBe(output);
     })
 
-    it.each([["100,200,300", 600]])("Should receive %s and return %i", (input, output)=>{
+    it.each([["100,200,300", 600], ["100,100,100,100", 400]])("Should receive %s and return %i", (input, output)=>{
         expect(Add(input)).toBe(output);
     })
 })
