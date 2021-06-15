@@ -1,15 +1,10 @@
-export function Add(input: string) {
+export function Add(input: string): number {
+  if (input.includes(',')) {
+      let arr = input.split(',');
+      return Add(arr[0]) + Add(arr[1]);
+  }
   if (input.length === 0) {
     return 0;
   }
-
-  if (input.includes(',')) {
-      let arr = input.split(',');
-      let a = parseInt(arr[0]);
-      let b = parseInt(arr[1]);
-
-      return a + b;
-  }
-
   return parseInt(input);
 }
