@@ -49,10 +49,29 @@ describe("Addition", () => {
 
   it.each([
     ["-1"],
-    ["-100"]
+    ["-100"],
+    ["-999"],
+    ["-13435"],
+    ["-45435345"],
+    ["-8"],
+
   ])("should throw an exception 'negatives not allowed %s' in case of %s as input", (input) => {
     expect(() => {Add(input)}).toThrow(`negatives not allowed ${input}`);
   });
+
+  it.each([
+    ["-56,65", -56]
+
+  ])("given the input is %s should throw an exception 'negatives not allowed %s'", (input, output) => {
+    try{
+      Add(input)
+    }catch(error){
+      expect(error.message).toBe(`negatives not allowed ${output}`)
+    }
+  });
+
+
+
 
 //   it("should throw an exception 'negatives not allowed -1' in case of '-1,-2,5' as input", ()=> {
 //     let input = "-1";
