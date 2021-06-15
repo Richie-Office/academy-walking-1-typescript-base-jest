@@ -3,7 +3,15 @@ export function Add(input: string): number {
     return 0;
   }
   let sum = 0;
-  input.split(/[,\n]/).forEach((part) => {
+  let delimitter = "";
+  if(input.startsWith("//")){
+      delimitter = input.split("\n")[0].charAt(2)
+      input = input.substr(4)
+
+  }
+  let regex = `[,\n${delimitter}]`
+
+  input.split(new RegExp(regex)).forEach((part) => {
     sum += parseInt(part);
   });
   return sum;
