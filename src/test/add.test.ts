@@ -16,5 +16,9 @@ describe('Addition', () => {
         expect(Add(input)).toBe(2);
     })
 
+    it("should receive '3' as input and return 3", () => {
+        let input = "3"
+        expect(Add(input)).toBe(3);
+    })
 
 })
