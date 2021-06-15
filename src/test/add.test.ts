@@ -1,3 +1,4 @@
+import { idText } from 'typescript';
 import { Add } from "../main/add";
 
 describe("Addition", () => {
@@ -40,10 +41,14 @@ describe("Addition", () => {
     ["//;\n1\n2,3;4;5", 15],
     ["//;\n1\n2,3;4;5;100", 115],
     ["//x\n1\n2,3x4x5x100x100", 215],
-    ["//-\n1\n2,3-4,5,100-100-100", 315],
-    ["//-\n1\n2,3\n4,5,100\n100-100\n100", 415],
-
+    ["//y\n1\n2,3y4,5,100y100y100", 315],
+    ["//a\n1\n2,3\n4,5,100\n100a100\n100", 415],
   ])("Should receive %s and return %i", (input, output) => {
     expect(Add(input)).toBe(output);
   });
+
+  it("should throw an exception 'negatives not allowed' in case of a negative number contained", ()=> {
+    let input = "-1";
+    expect(Add(input)).toThrow('negatives not allowed');
+  })
 });
