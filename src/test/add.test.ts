@@ -10,4 +10,11 @@ describe('Addition', () => {
         let input = "1"
         expect(Add(input)).toBe(1);
     })
+
+    it("should receive '2' as input and return 2", () => {
+        let input = "2"
+        expect(Add(input)).toBe(2);
+    })
+
+
 })
