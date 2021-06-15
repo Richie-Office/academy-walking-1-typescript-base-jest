@@ -47,8 +47,15 @@ describe("Addition", () => {
     expect(Add(input)).toBe(output);
   });
 
-  it("should throw an exception 'negatives not allowed' in case of a negative number contained", ()=> {
-    let input = "-1";
-    expect(Add(input)).toThrow('negatives not allowed');
-  })
+  it.each([
+    ["-1"],
+    ["-100"]
+  ])("should throw an exception 'negatives not allowed %s' in case of %s as input", (input) => {
+    expect(() => {Add(input)}).toThrow(`negatives not allowed ${input}`);
+  });
+
+//   it("should throw an exception 'negatives not allowed -1' in case of '-1,-2,5' as input", ()=> {
+//     let input = "-1";
+//     expect(() => {Add(input)}).toThrow('negatives not allowed -1');
+//   })
 });
