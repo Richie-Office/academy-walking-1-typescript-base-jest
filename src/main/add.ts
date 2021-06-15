@@ -5,5 +5,8 @@ export function Add(input: string) {
     if(input === "2"){
         return 2
     }
+    if(input === "3"){
+        return 3
+    }
     return 0;
 }
