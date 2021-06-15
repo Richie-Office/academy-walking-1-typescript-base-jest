@@ -27,8 +27,17 @@ describe("Addition", () => {
     expect(Add(input)).toBe(output);
   });
 
-  it("Should return 6 for input '1\n2,3'", () => {
-    let input = "1\n2,3";
-      expect(Add(input)).toBe(6);
-  })
+  it.each([
+    ["1\n2,3", 6],
+    ["100,100\n100\n100", 400],
+    ["100\n100\n100\n100\n1\n1\n1\n1", 404],
+  ])("Should receive %s and return %i", (input, output) => {
+    expect(Add(input)).toBe(output);
+  });
+
+  it.each([
+    ["//;\n1\n2,3;4", 10],
+  ])("Should receive %s and return %i", (input, output) => {
+    expect(Add(input)).toBe(output);
+  });
 });
