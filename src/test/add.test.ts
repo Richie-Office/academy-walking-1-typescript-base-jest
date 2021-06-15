@@ -9,8 +9,10 @@ describe('Addition', () => {
     it.each([["1",1], ["2",2], ["3",3], ["4",4], ['19', 19]])("Should receive %s and return %i", (input, output)=>{
         expect(Add(input)).toBe(output);
     })
-    it("should return 3 when I pass in '1,2'", () => {
-        let input = "1,2"
-        expect(Add(input)).toBe(3);
-    })
+
+    it.each([["1,2", 3], ["100,66", 166], [",1", 1]])("Should receive %s and return %i",  (input, output)=>{
+        expect(Add(input)).toBe(output);
+    })    
+
+
 })
