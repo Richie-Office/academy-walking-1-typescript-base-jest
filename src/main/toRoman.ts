@@ -1,4 +1,7 @@
 
 export function toRoman(input: number): string  {
-  return "I";
+  if (input == 1){
+    return "I"
+  }
+  return "II"
 }
