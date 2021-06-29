@@ -7,4 +7,8 @@ describe("To Roman", () => {
     expect(toRoman(number)).toBe("I");
   });
 
+  it("should receive a number 2 to be returned as roman numeral II", () => {
+    let number = 1;
+    expect(toRoman(number)).toBe("II");
+  });
 });
