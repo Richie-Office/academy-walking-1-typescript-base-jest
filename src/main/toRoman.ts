@@ -1,7 +1,10 @@
 
 export function toRoman(input: number): string  {
-  if (input == 1){
+  if (input === 1){
     return "I"
   }
-  return "II"
+  if(input === 2) {
+    return "II"
+  }
+  return "III"
 }

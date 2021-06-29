@@ -13,8 +13,12 @@ describe("To Roman", () => {
   });
 
   it("should receive a number 3 to be returned as roman numeral III", () => {
-    let number = 2;
+    let number = 3;
     expect(toRoman(number)).toBe("III");
   });
 
+  it("should receive a number 4 to be returned as roman numeral IV", () => {
+    let number = 4;
+    expect(toRoman(number)).toBe("IV");
+  });
 });
