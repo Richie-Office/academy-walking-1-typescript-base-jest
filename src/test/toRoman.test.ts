@@ -2,23 +2,7 @@ import { idText } from 'typescript';
 import { toRoman } from "../main/toRoman";
 
 describe("To Roman", () => {
-  it("should receive a number 1 to be returned as roman numeral I", () => {
-    let number = 1;
-    expect(toRoman(number)).toBe("I");
-  });
-
-  it("should receive a number 2 to be returned as roman numeral II", () => {
-    let number = 2;
-    expect(toRoman(number)).toBe("II");
-  });
-
-  it("should receive a number 3 to be returned as roman numeral III", () => {
-    let number = 3;
-    expect(toRoman(number)).toBe("III");
-  });
-
-  it("should receive a number 4 to be returned as roman numeral IV", () => {
-    let number = 4;
-    expect(toRoman(number)).toBe("IV");
+  test.each([[1,"I"],[2,"II"],[3,"III"],[4,"IV"],[5,"V"],[6,"VI"],[7,"VII"]])("should receive a number %i to be returned as roman numeral %s", (num: any, roman: any) => {
+    expect(toRoman(num)).toBe(roman);
   });
 });
