@@ -4,4 +4,8 @@ export class GameOfLife {
   constructor(initialGrid: number[][]) {
     this.grid = initialGrid;
   }
+
+  public print() {
+    return this.grid;
+  }
 }
